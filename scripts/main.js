@@ -290,7 +290,7 @@ mapGlobeSwitch.events.on("toggled", function() {
 // buttons & chart container
 var buttonsAndChartContainer = container.createChild(am4core.Container);
 buttonsAndChartContainer.layout = "vertical";
-buttonsAndChartContainer.height = am4core.percent(40); // make this bigger if you want more space for the chart
+buttonsAndChartContainer.height = am4core.percent(10.5); // make this bigger if you want more space for the chart
 buttonsAndChartContainer.width = am4core.percent(100);
 buttonsAndChartContainer.valign = "bottom";
 
@@ -315,6 +315,7 @@ buttonsContainer.contentAlign = "right";
 
 // Chart & slider container
 var chartAndSliderContainer = buttonsAndChartContainer.createChild(am4core.Container);
+chartAndSliderContainer.contentAlign = "right";
 chartAndSliderContainer.layout = "vertical";
 chartAndSliderContainer.height = am4core.percent(100);
 chartAndSliderContainer.width = am4core.percent(100);
@@ -328,7 +329,8 @@ chartAndSliderContainer.paddingBottom = 0;
 
 // Slider container
 var sliderContainer = chartAndSliderContainer.createChild(am4core.Container);
-sliderContainer.width = am4core.percent(100);
+sliderContainer.width = am4core.percent(95);
+sliderContainer.marginRight = 40;
 sliderContainer.padding(0, 15, 15, 10);
 sliderContainer.layout = "horizontal";
 
@@ -403,6 +405,7 @@ function stop() {
 // BOTTOM CHART
 // https://www.amcharts.com/docs/v4/chart-types/xy-chart/
 var lineChart = chartAndSliderContainer.createChild(am4charts.XYChart);
+lineChart.disabled = true;
 lineChart.fontSize = "0.8em";
 lineChart.paddingRight = 30;
 lineChart.paddingLeft = 30;
@@ -417,6 +420,7 @@ lineChart.data = JSON.parse(JSON.stringify(covid_total_timeline));
 // date axis
 // https://www.amcharts.com/docs/v4/concepts/axes/date-axis/
 var dateAxis = lineChart.xAxes.push(new am4charts.DateAxis());
+dateAxis.disabled = true;
 dateAxis.renderer.minGridDistance = 50;
 dateAxis.renderer.grid.template.stroke = am4core.color("#000000");
 dateAxis.max = lastDate.getTime() + am4core.time.getDuration("day", 3);
@@ -429,6 +433,7 @@ dateAxis.tooltip.label.fill = am4core.color("#000000")
 // value axis
 // https://www.amcharts.com/docs/v4/concepts/axes/value-axis/
 var valueAxis = lineChart.yAxes.push(new am4charts.ValueAxis());
+valueAxis.disabled = true;
 valueAxis.interpolationDuration = 3000;
 valueAxis.renderer.grid.template.stroke = am4core.color("#000000");
 valueAxis.renderer.baseGrid.disabled = true;
