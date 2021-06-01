@@ -102,6 +102,7 @@ container.background.fillOpacity = 1;
 // MAP CHART 
 // https://www.amcharts.com/docs/v4/chart-types/map/
 var mapChart = container.createChild(am4maps.MapChart);
+mapChart.paddingTop = 50;
 mapChart.height = am4core.percent(80);
 mapChart.zoomControl = new am4maps.ZoomControl();
 mapChart.zoomControl.align = "right";
@@ -290,7 +291,7 @@ mapGlobeSwitch.events.on("toggled", function() {
 // buttons & chart container
 var buttonsAndChartContainer = container.createChild(am4core.Container);
 buttonsAndChartContainer.layout = "vertical";
-buttonsAndChartContainer.height = am4core.percent(10.5); // make this bigger if you want more space for the chart
+buttonsAndChartContainer.height = am4core.percent(15); // make this bigger if you want more space for the chart
 buttonsAndChartContainer.width = am4core.percent(100);
 buttonsAndChartContainer.valign = "bottom";
 
@@ -330,7 +331,7 @@ chartAndSliderContainer.paddingBottom = 0;
 // Slider container
 var sliderContainer = chartAndSliderContainer.createChild(am4core.Container);
 sliderContainer.width = am4core.percent(95);
-sliderContainer.marginRight = 40;
+sliderContainer.marginRight = 55;
 sliderContainer.padding(0, 15, 15, 10);
 sliderContainer.layout = "horizontal";
 
