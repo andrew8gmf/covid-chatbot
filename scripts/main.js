@@ -103,6 +103,7 @@ container.background.fillOpacity = 1;
 // https://www.amcharts.com/docs/v4/chart-types/map/
 var mapChart = container.createChild(am4maps.MapChart);
 mapChart.paddingTop = 50;
+mapChart.paddingRight = 100;
 mapChart.height = am4core.percent(80);
 mapChart.zoomControl = new am4maps.ZoomControl();
 mapChart.zoomControl.align = "right";
@@ -309,6 +310,7 @@ countryName.valign = "middle";
 
 // buttons container (active/confirmed/recovered/deaths)
 var buttonsContainer = nameAndButtonsContainer.createChild(am4core.Container);
+buttonsContainer.marginRight = 155;
 buttonsContainer.layout = "grid";
 buttonsContainer.width = am4core.percent(100);
 buttonsContainer.x = 10;
@@ -330,8 +332,8 @@ chartAndSliderContainer.paddingBottom = 0;
 
 // Slider container
 var sliderContainer = chartAndSliderContainer.createChild(am4core.Container);
-sliderContainer.width = am4core.percent(95);
-sliderContainer.marginRight = 55;
+sliderContainer.width = am4core.percent(85);
+sliderContainer.marginRight = 150;
 sliderContainer.padding(0, 15, 15, 10);
 sliderContainer.layout = "horizontal";
 
