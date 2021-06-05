@@ -7,6 +7,19 @@
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
+    <script>
+        window.watsonAssistantChatOptions = {
+            integrationID: "e37d8bab-727b-437a-aaaa-67448cea98d0", // The ID of this integration.
+            region: "us-south", // The region your integration is hosted in.
+            serviceInstanceID: "64f4d01f-4c25-4005-aa4d-28397ca5cf2a", // The ID of your service instance.
+            onLoad: function(instance) { instance.render(); }
+        };
+        setTimeout(function(){
+          const t=document.createElement('script');
+          t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+          document.head.appendChild(t);
+        });
+    </script>
     <script src="https://www.amcharts.com/lib/4/core.js"></script>
     <script src="https://www.amcharts.com/lib/4/charts.js"></script>
     <script src="https://www.amcharts.com/lib/4/maps.js"></script>
